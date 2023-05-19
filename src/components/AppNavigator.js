@@ -13,7 +13,7 @@ import {
   });
   
   const SettingsStack = createStackNavigator({
-    Settings: { screen: SettingsScreen },
+    SignUp: { screen: SignUp},
     Main: { screen: Main }
   });
   
@@ -25,10 +25,10 @@ import {
           title: "SignIn"
         }
       },
-      Setting: {
+      SignUp: {
         screen: SettingsStack,
         navigationOptions: {
-          title: "Setting"
+          title: "SignUp"
         }
       }
     }

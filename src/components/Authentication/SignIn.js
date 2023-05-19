@@ -23,6 +23,10 @@ export default class SignIn extends Component {
       password: '',
     };
   }
+  goToSignUp() {
+    const {} = this.props;
+    navigation.push ({ name: 'SIGN UP'})
+  }
   onSignIn() {
     const {email, password} = this.state;
     signIn(email, password)
@@ -95,7 +99,7 @@ export default class SignIn extends Component {
 
             </View>
             <View style = {{ alignItems: 'center', paddingTop: 50}}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress = {this.goToSignUp.bind(this)}>
                 <Text style = {{color: '#707070', textAlign:'right'}}>Don't have an acount yet? Register today!</Text>
               </TouchableOpacity>
             </View>
