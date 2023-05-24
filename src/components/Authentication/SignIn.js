@@ -9,6 +9,8 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+
+import icGoogle from '../../../media/appIcon/google.png'
 // import signIn from '../../api/signIn';
 // import global from '../global';
 
@@ -87,6 +89,7 @@ export default class SignIn extends Component {
             <View style ={styles.subcontainer}>
               <View style = {styles.bottom}>
                 <TouchableOpacity style={styles.smallButton1} onPress={this.onSignIn.bind(this)}>
+                  <Image source = {icGoogle} />
                   <Text style={{color: '#000', textAlign:'center', justifyContent: 'center', marginLeft: 30}}>Facebook</Text>
                 </TouchableOpacity>   
 

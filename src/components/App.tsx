@@ -8,47 +8,35 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 
 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Authentication from './Authentication/Authentication';
 import ChangeInfo from './ChangeInfo/ChangeInfo';
 import Main from './Main/Main';
-import OrderHistory from './OrderHistory/OrderHistory';
+import Header from './Main/Shop/Header';
 import SignIn from "./Authentication/SignIn";
 import SignUp from './Authentication/SignUp';
-// import refreshToken from '../api/refreshToken';
 
 StatusBar.setHidden(true);
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 const Stack = createNativeStackNavigator();
 
-// export default App;
 
 export default class App extends Component {
   componentDidMount() {
-      // setInterval(refreshToken, 30000);
+    //   setInterval(refreshToken, 30000);
   }
   render() {
       return (
-          // <Navigator 
-          //     initialRoute={{ name: 'MAIN' }}
-          //     renderScene={(route, navigator) => {
-          //         switch (route.name) {
-          //             case 'MAIN': return <Main navigator={navigator} />;
-          //             case 'CHANGE_INFO': return <ChangeInfo navigator={navigator} user={route.user} />;
-          //             case 'AUTHENTICATION': return <Authentication navigator={navigator} />;
-          //             default: return <OrderHistory navigator={navigator} />;
-          //         }
-          //     }}
-          //     configureScene={route => {
-          //         if (route.name === 'AUTHENTICATION') return Navigator.SceneConfigs.FloatFromRight;
-          //         return Navigator.SceneConfigs.FloatFromLeft;
-          //     }}
-          // />
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName='Authentication' >
+            <Stack.Screen name = 'Main' component = {Main} />
+            <Stack.Screen name = 'ChangeInfo' component = {ChangeInfo} />
+            <Stack.Screen name = 'Authentication' component = {Authentication} />
+          </Stack.Navigator>
+        </NavigationContainer>
 
-
-          <SignUp/>
+          // <SignIn/>
       );
   }
 }
